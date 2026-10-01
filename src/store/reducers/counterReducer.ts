@@ -1,4 +1,4 @@
-import { DECREMENT, INCREMENT, RESET } from "../actions/counterActions";
+import { DECREMENT, INCREMENT, RESET, SET_VALUE } from "../actions/counterActions";
 
 interface CounterState {
   value: number;
@@ -19,6 +19,8 @@ export const counterReducer = (
       return { value: state.value - 1 };
     case RESET:
       return { value: 0 };
+    case SET_VALUE:
+      return { value: action.value };
     default:
       return state;
   }
